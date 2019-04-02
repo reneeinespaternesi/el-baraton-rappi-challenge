@@ -39,7 +39,7 @@ export default class Cart extends Component {
                     </Row>        
                   </Container>
                   <CartList value={value}/>
-                  <CartTotals value={value}/>
+                  <CartTotals value={value} history={this.props.history}/>
                 </React.Fragment>
               );
             } else {
