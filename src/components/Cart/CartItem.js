@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col, Image, Button } from 'react-bootstrap';
 
 export default function CartItem ({item, value}) {
-    const {id, name, img, price, quantity, count} = item;
+    const {id, name, img, price, count} = item;
     const {increment, decrement, removeItem} = value;
     const itemPrice = parseFloat(price);
     const total = itemPrice * count;
