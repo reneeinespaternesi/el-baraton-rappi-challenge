@@ -1,0 +1,45 @@
+/* General Styles */
+
+:root {
+  --blue: #2a2a72;
+  --white: #f3f3f3;
+  --lightBlue: #009ffd;
+  --black: #232528;
+  --yellow: #ffa400;
+}
+
+body {
+  font-family: 'Quattrocento Sans', sans-serif;
+  background: var(--white);
+  color: var(--black);
+}
+
+.text-title {
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+}
+
+.text-blue {
+  color: var(--blue);
+}
+
+.btn-black {
+  background: transparent;
+  text-transform: capitalize;
+  font-size: 0.8rem;
+  color: var(--black);
+  border-radius: 0;
+  border: 0.1rem solid var(--black);
+
+}
+
+.btn-black:hover {
+  background: var(--balck);
+  color: var(--white);
+}
+
+.cart-icon {
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--yellow);
+}
