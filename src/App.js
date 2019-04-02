@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
 import NavBar from './components/NavBarApp';
-import ProductList from './components/ProductList' ;
-import Details from './components/Details';
+import ProductList from './components/Product/ProductList';
+import Details from './components/Product/Details';
 import Cart from './components/Cart';
 import Default from './components/Default';
 import Modal from './components/atomsComponents/Modal'

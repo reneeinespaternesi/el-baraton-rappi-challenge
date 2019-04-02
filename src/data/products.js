@@ -3,7 +3,7 @@
   [
       {
         "quantity": 308,
-         "price": "8,958",
+         "price": "8.958",
         "available": false,
         "sublevel_id": 3,
         "name": "aute",
@@ -15,7 +15,7 @@
       },
       {
         "quantity": 891,
-         "price": "5,450",
+         "price": "5.450",
         "available": true,
         "sublevel_id": 3,
         "name": "mollit",
@@ -27,7 +27,7 @@
       },
       {
         "quantity": 698,
-         "price": "17,001",
+         "price": "17.001",
         "available": false,
         "sublevel_id": 10,
         "name": "eiusmod",
@@ -39,7 +39,7 @@
       },
       {
         "quantity": 449,
-         "price": "6,864",
+         "price": "6.864",
         "available": true,
         "sublevel_id": 7,
         "name": "proident",
@@ -51,7 +51,7 @@
       },
       {
         "quantity": 736,
-         "price": "13,253",
+         "price": "13.253",
         "available": false,
         "sublevel_id": 4,
         "name": "laboris",
@@ -63,7 +63,7 @@
       },
       {
         "quantity": 850,
-         "price": "10,930",
+         "price": "10.930",
         "available": false,
         "sublevel_id": 11,
         "name": "anim",
@@ -75,7 +75,7 @@
       },
       {
         "quantity": 644,
-         "price": "16,972",
+         "price": "16.972",
         "available": true,
         "sublevel_id": 12,
         "name": "duis",
@@ -86,7 +86,7 @@
       },
       {
         "quantity": 722,
-         "price": "6,904",
+         "price": "6.904",
         "available": true,
         "sublevel_id": 9,
         "name": "sunt",
@@ -98,7 +98,7 @@
       },
       {
         "quantity": 620,
-         "price": "13,813",
+         "price": "13.813",
         "available": true,
         "sublevel_id": 8,
         "name": "reprehenderit",
@@ -110,7 +110,7 @@
       },
       {
         "quantity": 297,
-         "price": "14,552",
+         "price": "14.552",
         "available": true,
         "sublevel_id": 1,
         "name": "non",
@@ -122,7 +122,7 @@
       },
       {
         "quantity": 514,
-         "price": "11,042",
+         "price": "11.042",
         "available": false,
         "sublevel_id": 1,
         "name": "dolor",
@@ -134,7 +134,7 @@
       },
       {
         "quantity": 887,
-         "price": "17,532",
+         "price": "17.532",
         "available": true,
         "sublevel_id": 13,
         "name": "dolor",
@@ -146,7 +146,7 @@
       },
       {
         "quantity": 202,
-         "price": "6,174",
+         "price": "6.174",
         "available": true,
         "sublevel_id": 13,
         "name": "enim",
@@ -158,7 +158,7 @@
       },
       {
         "quantity": 700,
-         "price": "1,904",
+         "price": "1.904",
         "available": false,
         "sublevel_id": 5,
         "name": "ad",
@@ -170,7 +170,7 @@
       },
       {
         "quantity": 343,
-         "price": "14,388",
+         "price": "14.388",
         "available": false,
         "sublevel_id": 3,
         "name": "ullamco",
@@ -182,7 +182,7 @@
       },
       {
         "quantity": 435,
-         "price": "6,809",
+         "price": "6.809",
         "available": false,
         "sublevel_id": 6,
         "name": "mollit",
@@ -194,7 +194,7 @@
       },
       {
         "quantity": 104,
-         "price": "9,341",
+         "price": "9.341",
         "available": true,
         "sublevel_id": 1,
         "name": "aute",
@@ -206,7 +206,7 @@
       },
       {
         "quantity": 888,
-         "price": "3,793",
+         "price": "3.793",
         "available": true,
         "sublevel_id": 5,
         "name": "magna",
@@ -218,7 +218,7 @@
       },
       {
         "quantity": 888,
-         "price": "13,110",
+         "price": "13.110",
         "available": false,
         "sublevel_id": 7,
         "name": "aliqua",
@@ -230,7 +230,7 @@
       },
       {
         "quantity": 724,
-         "price": "5,827",
+         "price": "5.827",
         "available": true,
         "sublevel_id": 7,
         "name": "irure",
@@ -242,7 +242,7 @@
       },
       {
         "quantity": 119,
-         "price": "14,457",
+         "price": "14.457",
         "available": false,
         "sublevel_id": 3,
         "name": "nulla",
@@ -254,7 +254,7 @@
       },
       {
         "quantity": 104,
-         "price": "1,449",
+         "price": "1.449",
         "available": false,
         "sublevel_id": 10,
         "name": "elit",
@@ -266,7 +266,7 @@
       },
       {
         "quantity": 296,
-         "price": "9,619",
+         "price": "9.619",
         "available": false,
         "sublevel_id": 5,
         "name": "ea",
@@ -278,7 +278,7 @@
       },
       {
         "quantity": 585,
-         "price": "18,849",
+         "price": "18.849",
         "available": true,
         "sublevel_id": 5,
         "name": "occaecat",
@@ -290,7 +290,7 @@
       },
       {
         "quantity": 936,
-         "price": "2,843",
+         "price": "2.843",
         "available": true,
         "sublevel_id": 8,
         "name": "quis",
@@ -302,7 +302,7 @@
       },
       {
         "quantity": 399,
-         "price": "12,902",
+         "price": "12.902",
         "available": false,
         "sublevel_id": 7,
         "name": "id",
@@ -314,7 +314,7 @@
       },
       {
         "quantity": 735,
-         "price": "9,048",
+         "price": "9.048",
         "available": false,
         "sublevel_id": 3,
         "name": "nostrud",
@@ -326,7 +326,7 @@
       },
       {
         "quantity": 116,
-         "price": "1,482",
+         "price": "1.482",
         "available": false,
         "sublevel_id": 1,
         "name": "reprehenderit",
@@ -338,7 +338,7 @@
       },
       {
         "quantity": 649,
-         "price": "5,673",
+         "price": "5.673",
         "available": true,
         "sublevel_id": 9,
         "name": "voluptate",
@@ -350,7 +350,7 @@
       },
       {
         "quantity": 839,
-         "price": "3,767",
+         "price": "3.767",
         "available": false,
         "sublevel_id": 12,
         "name": "est",
@@ -362,7 +362,7 @@
       },
       {
         "quantity": 706,
-         "price": "17,417",
+         "price": "17.417",
         "available": true,
         "sublevel_id": 4,
         "name": "aliqua",
@@ -374,7 +374,7 @@
       },
       {
         "quantity": 566,
-         "price": "5,023",
+         "price": "5.023",
         "available": false,
         "sublevel_id": 4,
         "name": "eu",
@@ -386,7 +386,7 @@
       },
       {
         "quantity": 331,
-         "price": "9,972",
+         "price": "9.972",
         "available": false,
         "sublevel_id": 7,
         "name": "Lorem",
@@ -398,7 +398,7 @@
       },
       {
         "quantity": 975,
-         "price": "10,987",
+         "price": "10.987",
         "available": false,
         "sublevel_id": 10,
         "name": "exercitation",
@@ -410,7 +410,7 @@
       },
       {
         "quantity": 340,
-         "price": "7,533",
+         "price": "7.533",
         "available": true,
         "sublevel_id": 1,
         "name": "quis",
@@ -422,7 +422,7 @@
       },
       {
         "quantity": 543,
-         "price": "18,332",
+         "price": "18.332",
         "available": false,
         "sublevel_id": 11,
         "name": "ad",
@@ -434,7 +434,7 @@
       },
       {
         "quantity": 687,
-         "price": "15,006",
+         "price": "15.006",
         "available": true,
         "sublevel_id": 8,
         "name": "proident",
@@ -446,7 +446,7 @@
       },
       {
         "quantity": 217,
-         "price": "8,651",
+         "price": "8.651",
         "available": true,
         "sublevel_id": 1,
         "name": "id",
@@ -458,7 +458,7 @@
       },
       {
         "quantity": 466,
-         "price": "8,376",
+         "price": "8.376",
         "available": false,
         "sublevel_id": 13,
         "name": "laborum",
@@ -470,7 +470,7 @@
       },
       {
         "quantity": 922,
-         "price": "8,732",
+         "price": "8.732",
         "available": true,
         "sublevel_id": 8,
         "name": "non",
@@ -482,7 +482,7 @@
       },
       {
         "quantity": 553,
-         "price": "6,444",
+         "price": "6.444",
         "available": false,
         "sublevel_id": 10,
         "name": "labore",
@@ -494,7 +494,7 @@
       },
       {
         "quantity": 859,
-         "price": "9,423",
+         "price": "9.423",
         "available": true,
         "sublevel_id": 3,
         "name": "qui",
@@ -506,7 +506,7 @@
       },
       {
         "quantity": 842,
-         "price": "5,653",
+         "price": "5.653",
         "available": true,
         "sublevel_id": 5,
         "name": "eiusmod",
@@ -518,7 +518,7 @@
       },
       {
         "quantity": 967,
-         "price": "15,468",
+         "price": "15.468",
         "available": true,
         "sublevel_id": 11,
         "name": "mollit",
@@ -530,7 +530,7 @@
       },
       {
         "quantity": 102,
-         "price": "17,712",
+         "price": "17.712",
         "available": true,
         "sublevel_id": 3,
         "name": "consequat",
@@ -542,7 +542,7 @@
       },
       {
         "quantity": 240,
-         "price": "2,192",
+         "price": "2.192",
         "available": true,
         "sublevel_id": 6,
         "name": "enim",
@@ -554,7 +554,7 @@
       },
       {
         "quantity": 994,
-         "price": "18,523",
+         "price": "18.523",
         "available": true,
         "sublevel_id": 9,
         "name": "occaecat",
@@ -566,7 +566,7 @@
       },
       {
         "quantity": 429,
-         "price": "12,909",
+         "price": "12.909",
         "available": false,
         "sublevel_id": 7,
         "name": "elit",
@@ -578,7 +578,7 @@
       },
       {
         "quantity": 597,
-         "price": "14,970",
+         "price": "14.970",
         "available": true,
         "sublevel_id": 3,
         "name": "sint",
@@ -590,7 +590,7 @@
       },
       {
         "quantity": 898,
-         "price": "9,091",
+         "price": "9.091",
         "available": true,
         "sublevel_id": 4,
         "name": "in",
@@ -602,7 +602,7 @@
       },
       {
         "quantity": 410,
-         "price": "5,525",
+         "price": "5.525",
         "available": false,
         "sublevel_id": 11,
         "name": "excepteur",
@@ -614,7 +614,7 @@
       },
       {
         "quantity": 176,
-         "price": "15,789",
+         "price": "15.789",
         "available": false,
         "sublevel_id": 13,
         "name": "irure",
@@ -626,7 +626,7 @@
       },
       {
         "quantity": 198,
-         "price": "15,502",
+         "price": "15.502",
         "available": false,
         "sublevel_id": 8,
         "name": "dolore",
@@ -638,7 +638,7 @@
       },
       {
         "quantity": 835,
-         "price": "10,050",
+         "price": "10.050",
         "available": false,
         "sublevel_id": 2,
         "name": "ad",
@@ -650,7 +650,7 @@
       },
       {
         "quantity": 144,
-         "price": "6,603",
+         "price": "6.603",
         "available": false,
         "sublevel_id": 6,
         "name": "pariatur",
@@ -662,7 +662,7 @@
       },
       {
         "quantity": 977,
-         "price": "18,389",
+         "price": "18.389",
         "available": false,
         "sublevel_id": 13,
         "name": "duis",
@@ -674,7 +674,7 @@
       },
       {
         "quantity": 806,
-         "price": "2,056",
+         "price": "2.056",
         "available": false,
         "sublevel_id": 9,
         "name": "ut",
@@ -686,7 +686,7 @@
       },
       {
         "quantity": 639,
-         "price": "4,262",
+         "price": "4.262",
         "available": true,
         "sublevel_id": 11,
         "name": "aliquip",
@@ -698,7 +698,7 @@
       },
       {
         "quantity": 767,
-         "price": "10,651",
+         "price": "10.651",
         "available": true,
         "sublevel_id": 10,
         "name": "aliqua",
@@ -710,7 +710,7 @@
       },
       {
         "quantity": 758,
-         "price": "16,235",
+         "price": "16.235",
         "available": false,
         "sublevel_id": 3,
         "name": "id",
@@ -722,7 +722,7 @@
       },
       {
         "quantity": 546,
-         "price": "5,982",
+         "price": "5.982",
         "available": true,
         "sublevel_id": 10,
         "name": "non",
@@ -734,7 +734,7 @@
       },
       {
         "quantity": 592,
-         "price": "7,678",
+         "price": "7.678",
         "available": false,
         "sublevel_id": 9,
         "name": "reprehenderit",
@@ -746,7 +746,7 @@
       },
       {
         "quantity": 945,
-         "price": "17,532",
+         "price": "17.532",
         "available": false,
         "sublevel_id": 5,
         "name": "tempor",
@@ -758,7 +758,7 @@
       },
       {
         "quantity": 307,
-         "price": "9,036",
+         "price": "9.036",
         "available": false,
         "sublevel_id": 5,
         "name": "non",
@@ -770,7 +770,7 @@
       },
       {
         "quantity": 378,
-         "price": "13,615",
+         "price": "13.615",
         "available": false,
         "sublevel_id": 5,
         "name": "pariatur",
@@ -782,7 +782,7 @@
       },
       {
         "quantity": 346,
-         "price": "7,621",
+         "price": "7.621",
         "available": false,
         "sublevel_id": 1,
         "name": "reprehenderit",
@@ -794,7 +794,7 @@
       },
       {
         "quantity": 150,
-         "price": "14,842",
+         "price": "14.842",
         "available": true,
         "sublevel_id": 12,
         "name": "aliquip",
@@ -806,7 +806,7 @@
       },
       {
         "quantity": 905,
-         "price": "17,876",
+         "price": "17.876",
         "available": false,
         "sublevel_id": 7,
         "name": "veniam",
@@ -818,7 +818,7 @@
       },
       {
         "quantity": 717,
-         "price": "6,521",
+         "price": "6.521",
         "available": false,
         "sublevel_id": 8,
         "name": "magna",
@@ -830,7 +830,7 @@
       },
       {
         "quantity": 235,
-         "price": "2,504",
+         "price": "2.504",
         "available": true,
         "sublevel_id": 12,
         "name": "tempor",
@@ -845,7 +845,7 @@
 
 export const detailProduct = {  
     "quantity": 308,
-    "price": "$8,958",
+    "price": "$8.958",
     "available": false,
     "sublevel_id": 3,
     "name": "aute",

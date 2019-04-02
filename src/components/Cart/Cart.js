@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Title from '../atomsComponents/Title';
-import { Container, Row, Col, Image } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { ProductConsumer } from '../../context';
 import CartList from './CartList';
 import CartTotals from './CartTotals';

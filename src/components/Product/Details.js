@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ProductConsumer } from '../context';
+import { ProductConsumer } from '../../context';
 import { Button, Container, Row, Col, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 

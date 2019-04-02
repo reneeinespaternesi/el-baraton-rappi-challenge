@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { storeProducts, detailProduct } from './data/products';
 import { categories } from './data/categories';
-import { timingSafeEqual } from 'crypto';
 
 const ProductContext = React.createContext();
 
@@ -16,7 +15,14 @@ class ProductProvider extends Component {
     modalProduct: detailProduct,
     cartSubtotal: 0,
     cartTax: 0,
-    cartTotal: 0
+    cartTotal: 0,
+    sorters: ['price up', 'price down', 'quantity up', 'quantity down'],
+    selectedSorter: "",
+    filters: ['available', 'not available', 'price', 'quantity'],
+    availableFilter: false,
+    priceFilter: '',
+    quantityFilter: '',
+    hideFilter: false
   };
 
   componentDidMount() {
@@ -139,7 +145,7 @@ class ProductProvider extends Component {
     let subTotal = 0;
     this.state.cart.map(item => {
       const itemPrice = parseFloat(item.price);
-      subTotal += (itemPrice * item.count);
+      return subTotal += (itemPrice * item.count);
     });
     const tempTax = subTotal * 0.1;
     const tax = parseFloat(tempTax.toFixed(2));
@@ -154,6 +160,56 @@ class ProductProvider extends Component {
     });
   };
 
+  setSorter = (sorter) =>{
+    this.setState(() => {
+      return {
+        selectedSorter: sorter
+      }
+    });
+  };
+
+  setAvailableFilter = (value) =>{
+    this.setState(() => {
+      return {
+        availableFilter: value
+      }
+    });
+  };
+
+  setPriceFilter = (value) =>{
+    this.setState(() => {
+      return {
+        priceFilter: value
+      }
+    });
+  };
+
+  setQtyFilter = (value) =>{
+    this.setState(() => {
+      return {
+        quantityFilter: value
+      }
+    });
+  };
+
+  clearFilters = () =>{
+    this.setState(() => {
+      return {
+        selectedSorter: "",
+        availableFilter: false,
+        priceFilter: '',
+        quantityFilter: ''
+      };
+    })
+  };
+
+  toogleFilters = () =>{
+    const currentFilterState = this.state.hideFilter;
+    this.setState(() => {
+      return {hideFilter: !currentFilterState}
+    })
+  };
+
   render() {
     return (
       <ProductContext.Provider value={{
@@ -165,7 +221,13 @@ class ProductProvider extends Component {
          increment: this.increment,
          decrement: this.decrement,
          removeItem: this.removeItem,
-         clearCart: this.clearCart
+         clearCart: this.clearCart.bind,
+         setSorter: this.setSorter,
+         setAvailableFilter: this.setAvailableFilter,
+         setPriceFilter: this.setPriceFilter,
+         setQtyFilter: this.setQtyFilter,
+         toogleFilters: this.toogleFilters,
+         clearFilters: this.clearFilters
       }}>
         {this.props.children}
       </ProductContext.Provider>
@@ -174,29 +236,5 @@ class ProductProvider extends Component {
 }
 
 const ProductConsumer = ProductContext.Consumer;
-
-/*class CategoryProvider extends Component {
-
-  state = {
-    categories: categories
-  }
-
-  categoryhandleDetail = () =>{
-    console.log ('hello from detail category');
-  }
-
-  render() {
-    return (
-      <CategoryContext.Provider value={{
-         ...this.state, 
-         handleDetail: this.handleDetail
-      }}>
-        {this.props.children}
-      </CategoryContext.Provider>
-    );
-  }
-}
-
-const CategoryConsumer = CategoryContext.Consumer;*/
 
 export { ProductProvider, ProductConsumer };

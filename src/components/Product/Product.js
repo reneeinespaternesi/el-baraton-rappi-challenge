@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { ProductConsumer } from '../context';
+import { ProductConsumer } from '../../context';
 import { Image, Button } from 'react-bootstrap';
 import styled from 'styled-components'
 import PropTypes from 'prop-types';
