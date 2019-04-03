@@ -1,39 +1,66 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { ProductConsumer } from '../../context';
-import { Image, Button } from 'react-bootstrap';
-import styled from 'styled-components'
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import { ProductConsumer } from "../../context";
+import { Image, Button } from "react-bootstrap";
+import styled from "styled-components";
+import PropTypes from "prop-types";
 
 class Product extends Component {
   render() {
-    const { id, name, img, price, inCart, available} = this.props.product;
+    const { id, name, img, price, inCart, available } = this.props.product;
     return (
       <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
         <div className="card">
           <ProductConsumer>
             {value => (
-            <div className="img-container p-5" onClick={() => value.handleDetail(id)}>
-              <Link to="/details">
-                <Image src={img} fluid alt="product" className="card-img-top"/>
-              </Link>
-              <Button className="cart-btn" disabled={ available ? (inCart ? true : false) : true} onClick={()=> {value.addToCart(id); value.openModal(id); }}>
-                {available ? (inCart ? (<p className="text-capitalize mb-0" disabled>{" "} in cart</p>) : (<i className="fas fa-cart-plus"/>)) : (<p className="text-capitalize mb-0" disabled>{" "} not available</p>)}
-              </Button>
-            </div>
+              <div
+                className="img-container p-5"
+                onClick={() => value.handleDetail(id)}
+              >
+                <Link to="/details">
+                  <Image
+                    src={img}
+                    fluid
+                    alt="product"
+                    className="card-img-top"
+                  />
+                </Link>
+                <Button
+                  className="cart-btn"
+                  disabled={available ? (inCart ? true : false) : true}
+                  onClick={() => {
+                    value.addToCart(id);
+                    value.openModal(id);
+                  }}
+                >
+                  {available ? (
+                    inCart ? (
+                      <p className="text-capitalize mb-0" disabled>
+                        {" "}
+                        in cart
+                      </p>
+                    ) : (
+                      <i className="fas fa-cart-plus" />
+                    )
+                  ) : (
+                    <p className="text-capitalize mb-0" disabled>
+                      {" "}
+                      not available
+                    </p>
+                  )}
+                </Button>
+              </div>
             )}
           </ProductConsumer>
           <div className="card-footer d-flex justify-content-between">
-            <p className="align-self-center mb-0 text-capitalize">
-              {name}
-            </p>
+            <p className="align-self-center mb-0 text-capitalize">{name}</p>
             <h5 className="text-blue font-italic mb-0">
               <span className="mr-1">{price}</span>
             </h5>
           </div>
         </div>
       </ProductWrapper>
-    )
+    );
   }
 }
 
@@ -96,7 +123,6 @@ const ProductWrapper = styled.div`
     color: var(--blue);
     cursor: pointer;
   }
-`
+`;
 
 export default Product;
-
