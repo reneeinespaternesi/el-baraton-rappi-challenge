@@ -41,6 +41,16 @@ class ProductList extends Component {
     return result;
   }
 
+  static applyCategories(products, categoryId) {
+    let result = products;
+
+    result = categoryId
+      ? result.filter(product => product.sublevel_id === categoryId)
+      : result;
+
+    return result;
+  }
+
   render() {
     return (
       <React.Fragment>

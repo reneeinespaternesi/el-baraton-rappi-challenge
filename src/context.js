@@ -21,7 +21,8 @@ class ProductProvider extends Component {
     availableFilter: false,
     priceFilter: "",
     quantityFilter: "",
-    hideFilter: false
+    hideFilter: false,
+    selectedCategory: ""
   };
 
   componentDidMount() {
@@ -237,6 +238,14 @@ class ProductProvider extends Component {
     });
   };
 
+  setCategory = category => {
+    this.setState(() => {
+      return {
+        selectedCategory: category
+      };
+    });
+  };
+
   clearFilters = () => {
     this.setState(() => {
       return {
@@ -273,7 +282,8 @@ class ProductProvider extends Component {
           setPriceFilter: this.setPriceFilter,
           setQtyFilter: this.setQtyFilter,
           toogleFilters: this.toogleFilters,
-          clearFilters: this.clearFilters
+          clearFilters: this.clearFilters,
+          setCategory: this.setCategory
         }}
       >
         {this.props.children}

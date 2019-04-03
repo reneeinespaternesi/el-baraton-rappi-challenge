@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Col, Form, Container, Row, Button } from "react-bootstrap";
+import { Col, Form, Container, Row, Button, Image } from "react-bootstrap";
 import styled from "styled-components";
 import { ProductConsumer } from "../context";
 
@@ -16,7 +16,9 @@ class Filter extends Component {
             availableFilter,
             priceFilter,
             quantityFilter,
-            hideFilter
+            hideFilter,
+            categories,
+            selectedCategory
           } = value;
           const {
             setSorter,
@@ -24,7 +26,8 @@ class Filter extends Component {
             setAvailableFilter,
             setPriceFilter,
             setQtyFilter,
-            clearFilters
+            clearFilters,
+            setCategory
           } = value;
           return (
             <Container fluid>
@@ -50,50 +53,162 @@ class Filter extends Component {
                     <fieldset>
                       <Form.Group as={Row}>
                         <Col sm={6}>
-                          <h5 className="mb-2 mt-2">
-                            <strong>Filter By:</strong>
-                          </h5>
                           <Form.Group as={Row}>
-                            <Col sm={12} className="mb-2">
-                              <Form.Check
-                                type="radio"
-                                label="Available"
-                                name="formHorizontalRadios"
-                                id="formHorizontalRadios1"
-                                checked={availableFilter}
-                                onChange={event => {
-                                  setAvailableFilter(event.target.value);
-                                }}
-                              />
+                            {/* filter by*/}
+                            <Col sm={12}>
+                              <h5 className="mb-2 mt-2">
+                                <strong>Filter By:</strong>
+                              </h5>
+                              <Form.Group as={Row}>
+                                <Col sm={12} className="mb-2">
+                                  <Form.Check
+                                    type="radio"
+                                    label="Available"
+                                    name="formHorizontalRadios"
+                                    id="formHorizontalRadios1"
+                                    checked={availableFilter}
+                                    onChange={event => {
+                                      setAvailableFilter(event.target.value);
+                                    }}
+                                  />
+                                </Col>
+                                <Col sm={4}>
+                                  <Form.Label>Price From</Form.Label>
+                                  <Form.Control
+                                    type="number"
+                                    placeholder="Price From"
+                                    value={priceFilter}
+                                    onChange={event =>
+                                      setPriceFilter(Number(event.target.value))
+                                    }
+                                  />
+                                </Col>
+                                <Col sm={4}>
+                                  <Form.Label>Quantity</Form.Label>
+                                  <Form.Control
+                                    type="number"
+                                    placeholder="Quantity From"
+                                    value={quantityFilter}
+                                    onChange={event =>
+                                      setQtyFilter(Number(event.target.value))
+                                    }
+                                  />
+                                </Col>
+                              </Form.Group>
                             </Col>
-                            <Col sm={4}>
-                              <Form.Label>Price From</Form.Label>
-                              <Form.Control
-                                type="number"
-                                placeholder="Price From"
-                                value={priceFilter}
-                                onChange={event =>
-                                  setPriceFilter(Number(event.target.value))
-                                }
-                              />
-                            </Col>
-                            <Col sm={4}>
-                              <Form.Label>Quantity</Form.Label>
-                              <Form.Control
-                                type="number"
-                                placeholder="Quantity From"
-                                value={quantityFilter}
-                                onChange={event =>
-                                  setQtyFilter(Number(event.target.value))
-                                }
-                              />
+                            {/* filter by*/}
+                            <Col sm={12}>
+                              <h5 className="mb-2 mt-2">
+                                <strong>Sort By:</strong>
+                              </h5>
+                              <Form.Group as={Row}>
+                                <Col sm={8}>
+                                  <Form.Control
+                                    as="select"
+                                    value={sorters}
+                                    onChange={event => {
+                                      setSorter(event.target.value);
+                                    }}
+                                  >
+                                    <option value="">
+                                      {selectedSorter
+                                        ? selectedSorter
+                                        : "Choose..."}
+                                    </option>
+                                    {value.sorters.map(sort => (
+                                      <option key={sort} value={sort}>
+                                        {sort}
+                                      </option>
+                                    ))}
+                                  </Form.Control>
+                                </Col>
+                              </Form.Group>
                             </Col>
                           </Form.Group>
                         </Col>
+                        {/*categories*/}
                         <Col sm={6}>
                           <h5 className="mb-2 mt-2">
                             <strong>Categories</strong>
                           </h5>
+                          <Form.Group as={Row}>
+                            {categories.map(category => {
+                              return (
+                                <Col
+                                  sm={3}
+                                  className="mb-2 btn-container text-center"
+                                  key={category.id}
+                                >
+                                  <Button
+                                    size="sm"
+                                    className={`category-btn
+                                    ${
+                                      category === selectedCategory
+                                        ? "selected"
+                                        : ""
+                                    }`}
+                                    onClick={() => {
+                                      setCategory(category);
+                                    }}
+                                  >
+                                    <Image
+                                      src={category.img}
+                                      fluid
+                                      alt="category"
+                                      className="category-img"
+                                      width="40"
+                                      height="40"
+                                    />
+                                  </Button>
+                                  <span className="mt-1">
+                                    <strong>{category.name}</strong>
+                                  </span>
+                                </Col>
+                              );
+                            })}
+                          </Form.Group>
+                          {selectedCategory && (
+                            <Form.Group as={Row}>
+                              <h6 className="mb-2 mt-2 col-12">
+                                Subcategoryes
+                              </h6>
+                              {selectedCategory.sublevels.map(subcategory => {
+                                return (
+                                  <Col
+                                    sm={3}
+                                    className="mb-2 btn-container text-center"
+                                    key={subcategory.id}
+                                  >
+                                    <Button
+                                      size="sm"
+                                      className={`category-btn
+                                    ${
+                                      subcategory === selectedCategory
+                                        ? "selected"
+                                        : ""
+                                    }`}
+                                    >
+                                      <Image
+                                        src={subcategory.img}
+                                        fluid
+                                        alt="subcategory"
+                                        className="category-img"
+                                        width="40"
+                                        height="40"
+                                      />
+                                    </Button>
+                                    <span className="mt-1">
+                                      <strong>{subcategory.name}</strong>
+                                    </span>
+                                  </Col>
+                                );
+                              })}
+                            </Form.Group>
+                          )}
+                        </Col>
+                      </Form.Group>
+                      <Form.Group as={Row}>
+                        <Col sm={12} className="text-center">
                           <button
                             type="button"
                             className="btn btn-outline-danger text-uppercase mb-3 px-5"
@@ -101,33 +216,6 @@ class Filter extends Component {
                           >
                             clear filters
                           </button>
-                        </Col>
-                        <Col sm={6}>
-                          <h5 className="mb-2 mt-2">
-                            <strong>Sort By:</strong>
-                          </h5>
-                          <Form.Group as={Row}>
-                            <Col sm={8}>
-                              <Form.Control
-                                as="select"
-                                value={sorters}
-                                onChange={event => {
-                                  setSorter(event.target.value);
-                                }}
-                              >
-                                <option value="">
-                                  {selectedSorter
-                                    ? selectedSorter
-                                    : "Choose..."}
-                                </option>
-                                {value.sorters.map(sort => (
-                                  <option key={sort} value={sort}>
-                                    {sort}
-                                  </option>
-                                ))}
-                              </Form.Control>
-                            </Col>
-                          </Form.Group>
                         </Col>
                       </Form.Group>
                     </fieldset>
@@ -173,6 +261,27 @@ const FilterWrapper = styled.div`
 
   .formFilter {
     border-right: 1pz solid var(--blue);
+  }
+
+  .category-btn {
+    background: transparent;
+    border: 1px solid var(--grey);
+    border-radius: 100%;
+    padding: 0.5rem;
+    overflow: hidden;
+  }
+
+  .category-btn:hover {
+    background-color: var(--lightBlue);
+  }
+
+  .category-btn.selected {
+    background-color: var(--lightBlue);
+    outline: none;
+  }
+
+  .btn-container span {
+    display: block;
   }
 `;
 

@@ -13,7 +13,7 @@ export const storeProducts = [
     count: 0
   },
   {
-    quantity: 1,
+    quantity: 891,
     price: "5.450",
     available: true,
     sublevel_id: 3,
