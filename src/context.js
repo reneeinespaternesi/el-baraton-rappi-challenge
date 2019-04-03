@@ -25,16 +25,21 @@ class ProductProvider extends Component {
   };
 
   componentDidMount() {
-    this.setProducts();
-    const storedData = !localStorage.getItem("myCart")
-      ? []
-      : JSON.parse(localStorage.getItem("myCart"));
-    this.setState({
-      cart: storedData.cart ? storedData.cart : [],
-      cartSubtotal: storedData.cartSubtotal ? storedData.cartSubtotal : 0,
-      cartTax: storedData.cartSubtotal ? storedData.cartTax : 0,
-      cartTotal: storedData.cartSubtotal ? storedData.cartTotal : 0
-    });
+    if (!localStorage.getItem("myCart")) {
+      this.setProducts();
+    } else {
+      const storedData = !localStorage.getItem("myCart")
+        ? []
+        : JSON.parse(localStorage.getItem("myCart"));
+      this.setState(() => {
+        return {
+          cart: storedData.cart ? storedData.cart : [],
+          cartSubtotal: storedData.cartSubtotal ? storedData.cartSubtotal : 0,
+          cartTax: storedData.cartTax ? storedData.cartTax : 0,
+          cartTotal: storedData.cartTotal ? storedData.cartTotal : 0
+        };
+      });
+    }
   }
 
   setProducts = () => {
@@ -191,7 +196,7 @@ class ProductProvider extends Component {
         const unified = Object.assign(
           {},
           { cart: this.state.cart },
-          { subtotal: this.state.cartSubtotal },
+          { cartSubtotal: this.state.cartSubtotal },
           { cartTax: this.state.cartTax },
           { cartTotal: this.state.cartTotal }
         );
