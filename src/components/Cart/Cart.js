@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import Title from '../atomsComponents/Title';
-import { Container, Row, Col } from 'react-bootstrap';
-import { ProductConsumer } from '../../context';
-import CartList from './CartList';
-import CartTotals from './CartTotals';
+import React, { Component } from "react";
+import Title from "../atomsComponents/Title";
+import { Container, Row, Col } from "react-bootstrap";
+import { ProductConsumer } from "../../context";
+import CartList from "./CartList";
+import CartTotals from "./CartTotals";
 
 export default class Cart extends Component {
   render() {
@@ -15,7 +15,7 @@ export default class Cart extends Component {
             if (cart.length > 0) {
               return (
                 <React.Fragment>
-                  <Title name="your" title="cart"/>
+                  <Title name="your" title="cart" />
                   <Container fluid className="text-center d-none d-lg-block">
                     <Row>
                       <Col xs={10} lg={2} className="mx-auto">
@@ -36,26 +36,29 @@ export default class Cart extends Component {
                       <Col xs={10} lg={2} className="mx-auto">
                         <p className="text-uppercase">total</p>
                       </Col>
-                    </Row>        
+                    </Row>
                   </Container>
-                  <CartList value={value}/>
-                  <CartTotals value={value} history={this.props.history}/>
+                  <CartList value={value} />
+                  <CartTotals value={value} history={this.props.history} />
                 </React.Fragment>
               );
             } else {
               return (
                 <Container fluid className="mt-5">
                   <Row>
-                    <Col xs={10} className="mx-auto text-center text-title text-capitalize">
+                    <Col
+                      xs={10}
+                      className="mx-auto text-center text-title text-capitalize"
+                    >
                       <h1>your cart is currently empty</h1>
                     </Col>
                   </Row>
-              </Container>
+                </Container>
               );
             }
-          }}          
-        </ProductConsumer>        
+          }}
+        </ProductConsumer>
       </section>
-    )
+    );
   }
 }

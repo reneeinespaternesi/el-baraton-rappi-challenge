@@ -6,10 +6,11 @@
   --lightBlue: #009ffd;
   --black: #232528;
   --yellow: #ffa400;
+  --grey: #a2a2a2;
 }
 
 body {
-  font-family: 'Quattrocento Sans', sans-serif;
+  font-family: "Quattrocento Sans", sans-serif;
   background: var(--white);
   color: var(--black);
 }
@@ -30,7 +31,6 @@ body {
   color: var(--black);
   border-radius: 0;
   border: 0.1rem solid var(--black);
-
 }
 
 .btn-black:hover {
