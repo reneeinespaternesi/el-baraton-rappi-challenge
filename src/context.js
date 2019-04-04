@@ -252,7 +252,8 @@ class ProductProvider extends Component {
         selectedSorter: "",
         availableFilter: false,
         priceFilter: "",
-        quantityFilter: ""
+        quantityFilter: "",
+        selectedCategory: ""
       };
     });
   };
@@ -276,7 +277,7 @@ class ProductProvider extends Component {
           increment: this.increment,
           decrement: this.decrement,
           removeItem: this.removeItem,
-          clearCart: this.clearCart.bind,
+          clearCart: this.clearCart,
           setSorter: this.setSorter,
           setAvailableFilter: this.setAvailableFilter,
           setPriceFilter: this.setPriceFilter,

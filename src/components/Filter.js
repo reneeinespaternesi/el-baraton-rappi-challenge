@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Col, Form, Container, Row, Button, Image } from "react-bootstrap";
 import styled from "styled-components";
 import { ProductConsumer } from "../context";
+import TreeView from "react-treeviewer";
 
 class Filter extends Component {
   static hideFilters() {}
@@ -96,7 +97,7 @@ class Filter extends Component {
                                 </Col>
                               </Form.Group>
                             </Col>
-                            {/* filter by*/}
+                            {/* sort by*/}
                             <Col sm={12}>
                               <h5 className="mb-2 mt-2">
                                 <strong>Sort By:</strong>
@@ -131,80 +132,17 @@ class Filter extends Component {
                           <h5 className="mb-2 mt-2">
                             <strong>Categories</strong>
                           </h5>
-                          <Form.Group as={Row}>
-                            {categories.map(category => {
-                              return (
-                                <Col
-                                  sm={3}
-                                  className="mb-2 btn-container text-center"
-                                  key={category.id}
-                                >
-                                  <Button
-                                    size="sm"
-                                    className={`category-btn
-                                    ${
-                                      category === selectedCategory
-                                        ? "selected"
-                                        : ""
-                                    }`}
-                                    onClick={() => {
-                                      setCategory(category);
-                                    }}
-                                  >
-                                    <Image
-                                      src={category.img}
-                                      fluid
-                                      alt="category"
-                                      className="category-img"
-                                      width="40"
-                                      height="40"
-                                    />
-                                  </Button>
-                                  <span className="mt-1">
-                                    <strong>{category.name}</strong>
-                                  </span>
-                                </Col>
-                              );
-                            })}
-                          </Form.Group>
-                          {selectedCategory && (
-                            <Form.Group as={Row}>
-                              <h6 className="mb-2 mt-2 col-12">
-                                Subcategoryes
-                              </h6>
-                              {selectedCategory.sublevels.map(subcategory => {
-                                return (
-                                  <Col
-                                    sm={3}
-                                    className="mb-2 btn-container text-center"
-                                    key={subcategory.id}
-                                  >
-                                    <Button
-                                      size="sm"
-                                      className={`category-btn
-                                    ${
-                                      subcategory === selectedCategory
-                                        ? "selected"
-                                        : ""
-                                    }`}
-                                    >
-                                      <Image
-                                        src={subcategory.img}
-                                        fluid
-                                        alt="subcategory"
-                                        className="category-img"
-                                        width="40"
-                                        height="40"
-                                      />
-                                    </Button>
-                                    <span className="mt-1">
-                                      <strong>{subcategory.name}</strong>
-                                    </span>
-                                  </Col>
-                                );
-                              })}
-                            </Form.Group>
-                          )}
+                          <TreeView
+                            data={categories}
+                            selectable={true}
+                            checkable={false}
+                            onSelect={(event, nodeData) => {
+                              setCategory(nodeData);
+                            }}
+                            draggable={false}
+                            animation={true}
+                            className="col-6"
+                          />
                         </Col>
                       </Form.Group>
                       <Form.Group as={Row}>
@@ -282,6 +220,16 @@ const FilterWrapper = styled.div`
 
   .btn-container span {
     display: block;
+  }
+
+  .tree-root {
+    font-size: 18px;
+    font-family: "Quattrocento Sans", sans-serif;
+  }
+
+  .tree-node-hovered a {
+    background-color: var(--lightBlue);
+    color: white;
   }
 `;
 

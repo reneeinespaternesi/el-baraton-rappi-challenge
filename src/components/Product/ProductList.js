@@ -25,7 +25,13 @@ class ProductList extends Component {
     return result;
   }
 
-  static applyFilters(products, availableFilter, priceFilter, quantityFilter) {
+  static applyFilters(
+    products,
+    availableFilter,
+    priceFilter,
+    quantityFilter,
+    selectedCategory
+  ) {
     let result = products;
 
     result = availableFilter
@@ -37,18 +43,31 @@ class ProductList extends Component {
     result = quantityFilter
       ? result.filter(product => product.quantity >= quantityFilter)
       : result;
+    if (selectedCategory) {
+      let sublevelSet = new Set(); //set to store unique values
+      ProductList.getSublevelIdsByCategory(sublevelSet, selectedCategory);
+      const sublevelIds = Array.from(sublevelSet);
+      result = result.filter(product =>
+        sublevelIds.includes(product.sublevel_id)
+      );
+    }
 
     return result;
   }
 
-  static applyCategories(products, categoryId) {
-    let result = products;
-
-    result = categoryId
-      ? result.filter(product => product.sublevel_id === categoryId)
-      : result;
-
-    return result;
+  /**
+   * recursive category leaft search
+   * @param {*} sublevelIds
+   * @param {*} category
+   */
+  static getSublevelIdsByCategory(sublevelIds, category) {
+    if (category.sublevels) {
+      category.sublevels.forEach(childCat => {
+        ProductList.getSublevelIdsByCategory(sublevelIds, childCat);
+      });
+    } else {
+      sublevelIds.add(category.id);
+    }
   }
 
   render() {
@@ -68,18 +87,21 @@ class ProductList extends Component {
                     selectedSorter,
                     availableFilter,
                     priceFilter,
-                    quantityFilter
+                    quantityFilter,
+                    selectedCategory
                   } = value;
                   let filterProducts = ProductList.applyFilters(
                     products,
                     availableFilter,
                     priceFilter,
-                    quantityFilter
+                    quantityFilter,
+                    selectedCategory
                   );
                   filterProducts = ProductList.applySort(
                     filterProducts,
                     selectedSorter
                   );
+
                   if (filterProducts.length > 0) {
                     return filterProducts.map(product => {
                       return <Product key={product.id} product={product} />;
