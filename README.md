@@ -3,29 +3,33 @@
 
 
 ## What is this
-This is a base e-commerce app for El Baraton created with React
+This is a base responsive e-commerce app, for El Baraton created, with React
 
 ## How to install
-You can use npm:
 ```
 npm install
 ```
-
+## How to run
+```
+npm start
+```
 ## Project structure
 ```
 *root*
 |
-│   ├── */node_modules/* where images and stuff are stored
-│   ├── */public/* contains test environment (Jest + Enzyme)
+│   ├── */node_modules/* 
+│   ├── */public/* contains icons and images
 │   ├── */src/* react-router jsx pages
 │       ├──components
 │       ├──data
 │       ├──index.js
 │       ├──App.jsx* main layout
-│   └── */tests/* contains test environment (Jest + Enzyme)
-│       ├── */__mock__/* contains setup to provide a valid path for imports
-│       ├── */_tests__/* the actual tests
-│       └── *setup.js* setup for enzyme for react 16
-├── *package.json* the whole package.json with every dependency and script, nothing is kept hidden
+├── *package.json* the whole package.json with every dependency and script
 └── *README.md* this file
 ```
+
+## Production Link
+https://el-baraton-rappi-challenge.netlify.com/
+
+## Git Repository
+https://github.com/reneeinespaternesi/el-baraton-rappi-challenge
