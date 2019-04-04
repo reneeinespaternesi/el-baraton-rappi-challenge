@@ -30,7 +30,8 @@ class ProductList extends Component {
     availableFilter,
     priceFilter,
     quantityFilter,
-    selectedCategory
+    selectedCategory,
+    searchText
   ) {
     let result = products;
 
@@ -51,6 +52,15 @@ class ProductList extends Component {
         sublevelIds.includes(product.sublevel_id)
       );
     }
+
+    result =
+      searchText != ""
+        ? result.filter(
+            product =>
+              product.name.toLowerCase().indexOf(searchText.toLowerCase()) !==
+              -1
+          )
+        : result;
 
     return result;
   }
@@ -88,14 +98,16 @@ class ProductList extends Component {
                     availableFilter,
                     priceFilter,
                     quantityFilter,
-                    selectedCategory
+                    selectedCategory,
+                    searchText
                   } = value;
                   let filterProducts = ProductList.applyFilters(
                     products,
                     availableFilter,
                     priceFilter,
                     quantityFilter,
-                    selectedCategory
+                    selectedCategory,
+                    searchText
                   );
                   filterProducts = ProductList.applySort(
                     filterProducts,

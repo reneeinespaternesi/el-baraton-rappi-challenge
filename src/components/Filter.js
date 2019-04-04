@@ -19,7 +19,8 @@ class Filter extends Component {
             quantityFilter,
             hideFilter,
             categories,
-            selectedCategory
+            selectedCategory,
+            searchText
           } = value;
           const {
             setSorter,
@@ -28,7 +29,8 @@ class Filter extends Component {
             setPriceFilter,
             setQtyFilter,
             clearFilters,
-            setCategory
+            setCategory,
+            setSearchText
           } = value;
           return (
             <Container fluid>
@@ -132,17 +134,33 @@ class Filter extends Component {
                           <h5 className="mb-2 mt-2">
                             <strong>Categories</strong>
                           </h5>
-                          <TreeView
-                            data={categories}
-                            selectable={true}
-                            checkable={false}
-                            onSelect={(event, nodeData) => {
-                              setCategory(nodeData);
-                            }}
-                            draggable={false}
-                            animation={true}
-                            className="col-6"
-                          />
+                          <Form.Group as={Row}>
+                            <Col sm={6}>
+                              <TreeView
+                                data={categories}
+                                selectable={true}
+                                checkable={false}
+                                onSelect={(event, nodeData) => {
+                                  setCategory(nodeData);
+                                }}
+                                draggable={false}
+                                animation={true}
+                              />
+                            </Col>
+                            {!selectedCategory.children && (
+                              <Col sm={6}>
+                                <Form.Label>Search Products By Name</Form.Label>
+                                <Form.Control
+                                  type="text"
+                                  placeholder="Enter product name"
+                                  value={searchText}
+                                  onChange={event => {
+                                    setSearchText(event.target.value);
+                                  }}
+                                />
+                              </Col>
+                            )}
+                          </Form.Group>
                         </Col>
                       </Form.Group>
                       <Form.Group as={Row}>

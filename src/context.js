@@ -22,7 +22,8 @@ class ProductProvider extends Component {
     priceFilter: "",
     quantityFilter: "",
     hideFilter: false,
-    selectedCategory: ""
+    selectedCategory: "",
+    searchText: ""
   };
 
   componentDidMount() {
@@ -246,6 +247,14 @@ class ProductProvider extends Component {
     });
   };
 
+  setSearchText = text => {
+    this.setState(() => {
+      return {
+        searchText: text
+      };
+    });
+  };
+
   clearFilters = () => {
     this.setState(() => {
       return {
@@ -253,7 +262,8 @@ class ProductProvider extends Component {
         availableFilter: false,
         priceFilter: "",
         quantityFilter: "",
-        selectedCategory: ""
+        selectedCategory: "",
+        searchText: ""
       };
     });
   };
@@ -284,7 +294,8 @@ class ProductProvider extends Component {
           setQtyFilter: this.setQtyFilter,
           toogleFilters: this.toogleFilters,
           clearFilters: this.clearFilters,
-          setCategory: this.setCategory
+          setCategory: this.setCategory,
+          setSearchText: this.setSearchText
         }}
       >
         {this.props.children}
